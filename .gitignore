@@ -1,1 +1,38 @@
+# Visual Studio 2022 build artifacts
+.vs/
+x64/
+x86/
+Debug/
+Release/
+[Dd]ebug/
+[Rr]elease/
+
+# User-specific files (per-developer settings)
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.opendb
+*.VC.db
+*.VC.opendb
+
+# Build outputs
+*.exe
+*.dll
+*.lib
+*.obj
+*.pch
+*.pdb
+*.idb
+*.ilk
+*.exp
+*.tlog
+*.log
+ipch/
+
+# Original
 test.txt
+
+# Wikipedia data — too big for git
+enwiki-*.txt
+report.txt
