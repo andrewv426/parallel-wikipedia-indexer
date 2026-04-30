@@ -42,6 +42,7 @@ struct CollectCtx {
     size_t    index;
     size_t    validWords;
     size_t    lengthCounts[MAX_WORD_LEN + 1];
+    size_t    uniqueLengthCounts[MAX_WORD_LEN + 1];
 };
 
 static void CollectCb(uint64_t, DWORD count, const char* word, int wordLen, void* ctx) {
@@ -52,8 +53,10 @@ static void CollectCb(uint64_t, DWORD count, const char* word, int wordLen, void
     wr->len   = wordLen;
 
     cc->validWords += count;
-    if (wordLen >= 0 && wordLen <= MAX_WORD_LEN)
+    if (wordLen >= 0 && wordLen <= MAX_WORD_LEN) {
         cc->lengthCounts[wordLen] += count;
+        cc->uniqueLengthCounts[wordLen]++;
+    }
 }
 
 static bool WordRankLess(const WordRank& a, const WordRank& b) {
@@ -169,10 +172,11 @@ static void ExportReportData(HashTable* master,
     f = NULL;
     fopen_s(&f, path, "w");
     if (f) {
-        fprintf(f, "length,count,percent\n");
+        fprintf(f, "length,unique_words,occurrences,occurrence_percent\n");
         for (int len = MIN_WORD_LEN; len <= MAX_WORD_LEN; len++) {
             double pct = cc.validWords ? 100.0 * (double)cc.lengthCounts[len] / (double)cc.validWords : 0.0;
-            fprintf(f, "%d,%zu,%.6f\n", len, cc.lengthCounts[len], pct);
+            fprintf(f, "%d,%zu,%zu,%.6f\n",
+                    len, cc.uniqueLengthCounts[len], cc.lengthCounts[len], pct);
         }
         fclose(f);
     }
