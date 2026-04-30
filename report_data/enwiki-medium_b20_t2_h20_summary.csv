@@ -1,0 +1,2 @@
+dataset,file_size_bytes,log2_buf_size,buf_size,n_threads,log2_hash_bins,unique,valid,invalid,total,elapsed_sec,mbps,wps,avg_word_len
+enwiki-medium,8635621334,20,1048576,2,20,4871639,948687303,332772578,1281459881,15.582077,528.528,82239350.327,5.717325
