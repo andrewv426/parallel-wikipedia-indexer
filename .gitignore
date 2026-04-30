@@ -34,9 +34,17 @@ ipch/
 .DS_Store
 desktop.ini
 
-# Original
+# Local test inputs
 test.txt
+test_hello.txt
+test_repeat.txt
 
-# Wikipedia data — too big for git
+# Wikipedia data -- too big for git
 enwiki-*.txt
 enwiki.zip
+
+# Generated benchmark data / local helper installs
+report_data/
+Lib/
+Scripts/
+share/
