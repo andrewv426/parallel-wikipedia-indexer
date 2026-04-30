@@ -40,7 +40,6 @@
    http://www.math.keio.ac.jp/matumoto/emt.html
    email: matumoto@math.keio.ac.jp
 */
-#include "stdafx.h"
 #include "mt.h"
 #include <stdio.h>
 
@@ -60,8 +59,8 @@ MersenneTwister::MersenneTwister ()
 
 MersenneTwister::~MersenneTwister ()
 {
-	delete mt;
-	delete mt64;
+	delete[] mt;
+	delete[] mt64;
 }
 
 /* initializes mt[N] with a seed */

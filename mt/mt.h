@@ -24,23 +24,23 @@ class MersenneTwister {
 	int mti64;				/* mti==N+1 means mt[N] is not initialized */
 
 public:
-	MersenneTwister::MersenneTwister ();
-	MersenneTwister::~MersenneTwister ();
+	MersenneTwister();
+	~MersenneTwister();
 
-	void MersenneTwister::init_genrand(unsigned long s);
-	void MersenneTwister::init_by_array(unsigned long init_key[], unsigned long key_length);
-	unsigned long MersenneTwister::genrand_int32(void);
-	long MersenneTwister::genrand_int31(void);
-	double MersenneTwister::genrand_real1(void);
+	void init_genrand(unsigned long s);
+	void init_by_array(unsigned long init_key[], unsigned long key_length);
+	unsigned long genrand_int32(void);
+	long genrand_int31(void);
+	double genrand_real1(void);
 	double genrand_real2(void);
-	double MersenneTwister::genrand_real3(void);
-	double MersenneTwister::genrand_res53(void);
+	double genrand_real3(void);
+	double genrand_res53(void);
 
-	void MersenneTwister::init_genrand64(unsigned __int64 seed);
-	void MersenneTwister::init_by_array64(unsigned __int64 init_key[], unsigned __int64 key_length);
-	unsigned __int64 MersenneTwister::genrand64_int64(void);
-	__int64 MersenneTwister::genrand64_int63(void);
-	double MersenneTwister::genrand64_real1(void);
-	double MersenneTwister::genrand64_real2(void);
-	double MersenneTwister::genrand64_real3(void);
+	void init_genrand64(unsigned __int64 seed);
+	void init_by_array64(unsigned __int64 init_key[], unsigned __int64 key_length);
+	unsigned __int64 genrand64_int64(void);
+	__int64 genrand64_int63(void);
+	double genrand64_real1(void);
+	double genrand64_real2(void);
+	double genrand64_real3(void);
 };
