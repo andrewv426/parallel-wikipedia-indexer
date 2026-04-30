@@ -30,9 +30,13 @@ Release/
 *.log
 ipch/
 
+# OS metadata
+.DS_Store
+desktop.ini
+
 # Original
 test.txt
 
 # Wikipedia data — too big for git
 enwiki-*.txt
-report.txt
+enwiki.zip
